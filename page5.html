@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كل الأذكار</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .azkar-box {
+            width: 45%;
+            margin: 10px;
+            padding: 15px;
+            background: #eef;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>كل الأذكار</h1>
+        <div class="section" id="azkar-section"></div>
+        <div class="links">
+            <a href="page2.html">الانتقال إلى صفحة الاحاديث</a>
+            <a href="page3.html">الانتقال إلى صفحة السنن</a>
+            <a href="تسبيح.html">الانتقال إلى التسبيح</a>
+            <a href="page4.html">الانتقال الى صفحه اسماء الله الحسنى </a>
+        </div>
+    </div>
+
+    <script>
+        const azkar = [
+            {type: "أذكار الصباح", text: "اللهم بك أصبحنا وبك أمسينا وبك نحيا وبك نموت وإليك النشور."},
+            {type: "أذكار المساء", text: "اللهم بك أمسينا وبك أصبحنا وبك نحيا وبك نموت وإليك المصير."},
+            {type: "أذكار النوم", text: "باسمك اللهم أموت وأحيا."},
+            {type: "أذكار الاستيقاظ", text: "الحمد لله الذي أحيانا بعد ما أماتنا وإليه النشور."},
+            {type: "أذكار دخول المنزل", text: "بسم الله ولجنا، وبسم الله خرجنا، وعلى ربنا توكلنا."},
+            {type: "أذكار الخروج من المنزل", text: "بسم الله، توكلت على الله، ولا حول ولا قوة إلا بالله."},
+            {type: "أذكار دخول المسجد", text: "اللهم افتح لي أبواب رحمتك."},
+            {type: "أذكار الخروج من المسجد", text: "اللهم إني أسألك من فضلك."},
+            {type: "أذكار دخول الحمام", text: "اللهم إني أعوذ بك من الخبث والخبائث."},
+            {type: "أذكار الخروج من الحمام", text: "غفرانك."},
+            {type: "أذكار السفر", text: "سبحان الذي سخر لنا هذا وما كنا له مقرنين وإنا إلى ربنا لمنقلبون."},
+            {type: "أذكار الأكل", text: "بسم الله، فإن نسي في أوله فليقل: بسم الله أوله وآخره."},
+            {type: "أذكار بعد الطعام", text: "الحمد لله الذي أطعمنا وسقانا وجعلنا من المسلمين."},
+            {type: "أذكار رؤية الهلال", text: "اللهم أهله علينا باليمن والإيمان والسلامة والإسلام."},
+            {type: "أذكار العطاس", text: "إذا عطس فليقل: الحمد لله، وإذا سمعه أحد فليقل: يرحمك الله."},
+        ];
+        
+        const section = document.getElementById("azkar-section");
+        azkar.forEach(zikr => {
+            const box = document.createElement("div");
+            box.classList.add("azkar-box");
+            box.innerHTML = `<h3>${zikr.type}</h3><p>${zikr.text}</p>`;
+            section.appendChild(box);
+        });
+    </script>
+</body>
+</html>

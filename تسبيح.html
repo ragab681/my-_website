@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أخو المسلم - عداد التسبيح</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 5px;
+        }
+        .tasbih-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 10px 0;
+            background: #e6f7ff;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .like-btn { background-color: lightgray; }
+        .like-btn.liked { background-color: red; color: white; }
+    </style>
+    <script>
+        function increment(id) {
+            let count = document.getElementById(id);
+            count.innerText = parseInt(count.innerText) + 1;
+        }
+        function reset(id) {
+            document.getElementById(id).innerText = 0;
+        }
+        function toggleLike(btn) {
+            btn.classList.toggle('liked');
+        }
+    </script>
+</head>
+<body <body style="background-color: lightblue;">
+    
+    <div class="container">
+        <h1>أخو المسلم</h1>
+        <h2>عداد التسبيح</h2>
+        
+        <!-- 50 مربع تسبيح -->
+        <div class="section">
+            <h3>التسبيح</h3>
+            <div id="tasbih-list">
+                <script>
+                    let tasbihPhrases = [
+                        "سبحان الله", "الحمد لله", "لا إله إلا الله", "الله أكبر", "لا حول ولا قوة إلا بالله",
+                        "سبحان الله وبحمده سبحان الله العظيم", "اللهم صل وسلم على نبينا محمد", "سبحان الله عدد خلقه",
+                        "سبحان الله رضا نفسه", "سبحان الله زنة عرشه", "سبحان الله مداد كلماته", "سبحان الملك القدوس",
+                        "اللهم انصر المسلمين", "اللهم اغفر لنا", "سبحان ذي الجبروت والملكوت", "سبحان الذي خلق الأزواج كلها",
+                        "سبحان الفعال لما يريد", "سبحان الله الحليم الكريم", "سبحان الله السميع البصير", "سبحان الله الذي لا يموت",
+                        "سبحان الله الواحد الأحد", "سبحان الله الغني الحميد", "سبحان الله القوي المتين", "سبحان الله الذي وسع كل شيء علمًا",
+                        "سبحان الله الذي يحيي ويميت", "سبحان الله الذي يعفو عن السيئات", "سبحان الله الذي يهدي من يشاء",
+                        "سبحان الله الذي يغفر الذنوب", "سبحان الله الذي بيده ملكوت كل شيء", "سبحان الله الملك الوهاب",
+                        "سبحان الله رب السماوات والأرض", "سبحان الله الذي لا تأخذه سنة ولا نوم", "سبحان الله الذي يعلم السر وأخفى",
+                        "سبحان الله الذي يعلم خائنة الأعين وما تخفي الصدور", "سبحان الله الذي أحصى كل شيء عددًا",
+                        "سبحان الله الذي يبدئ ويعيد", "سبحان الله الذي لا يعجزه شيء في الأرض ولا في السماء",
+                        "سبحان الله الذي وسعت رحمته كل شيء", "سبحان الله الذي لا راد لقضائه", "سبحان الله الذي هو أرحم الراحمين",
+                        "سبحان الله الذي هو أحكم الحاكمين", "سبحان الله الذي أمره بين الكاف والنون",
+                        "سبحان الله الذي لا تنفد كلماته", "سبحان الله الذي يغيث المستغيثين", "سبحان الله الذي يجيب المضطر إذا دعاه"
+                    ];
+                    
+                    let container = document.getElementById("tasbih-list");
+                    tasbihPhrases.forEach((phrase, index) => {
+                        let div = document.createElement("div");
+                        div.className = "tasbih-box";
+                        div.innerHTML = `
+                            <span>${phrase}</span>
+                            <span id="count${index}">0</span>
+                            <button onclick="increment('count${index}')">+1</button>
+                            <button onclick="reset('count${index}')">محو الكل</button>
+                            <button class="like-btn" onclick="toggleLike(this)">زر الإعجاب</button>
+                        `;
+                        container.appendChild(div);
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    <a href="Page2.html">
+        <button style="padding: 20px 20px; font-size: 20px; cursor: pointer;">الانتقال الى صفحه الاحاديث النبويه </button>
+    </a>  <h4>اضغط هناك </h4>
+    
+</body>
+</html>
